@@ -22,3 +22,8 @@ a {
 a:hover {
     color: lightskyblue;
 }
+
+#myChart {
+    margin: 40px auto;
+    height: 300px !important;
+}

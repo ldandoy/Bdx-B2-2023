@@ -6,5 +6,33 @@
 
 {% block body %}
     <div class="title">Dashboard !</div>
+
+    <div>
+      <canvas id="myChart"></canvas>
+    </div>
+
     <a href="{{url_for('hello_world')}}">Retour</a>
+
+    <script>
+          const ctx = document.getElementById('myChart');
+
+          new Chart(ctx, {
+                type: 'bar',
+                data: {
+                      labels: [{% for data in datas %}'{{data.label}}',{% endfor %}],
+                      datasets: [{
+                            label: '# of Votes',
+                            data: [{% for data in datas %}{{data.vote}},{% endfor %}],
+                            borderWidth: 1
+                      }]
+                },
+                options: {
+                      scales: {
+                            y: {
+                              beginAtZero: true
+                            }
+                      }
+                }
+          });
+    </script>
 {% endblock %}

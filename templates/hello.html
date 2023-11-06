@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Index page{% endblock %}
+
+{% block body %}
+    <div class="title">Bienvenu {{name}} !</div>
+    <ul>
+        <li><a href="{{url_for('about')}}">Informations</a></li>
+        <li><a href="{{url_for('dashboard')}}">Dashboard</a></li>
+    </ul>
+{% endblock %}

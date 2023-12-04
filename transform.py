@@ -1,5 +1,5 @@
 import pandas as pd
-from json import loads, dumps
+from json import loads
 
 datas = pd.read_csv("data/in/met_agenda.csv",delimiter=";")
 df1 = datas[['Titre','Ville', 'Mots clés', 'Événement physique ou en ligne']]
@@ -11,4 +11,4 @@ for key in range(len(parsed)):
     result_tmp = parsed[key]['Événement physique ou en ligne']
     df1.loc[key].at['Événement physique ou en ligne'] = loads(result_tmp)['label']['fr']
 
-df1.to_csv("data/out/import.csv", header=True,index=False)
+df1.to_csv("data/out/import.py", header=True,index=False)

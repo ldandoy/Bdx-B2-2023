@@ -3,3 +3,6 @@ pandas
 matplotlib
 seaborn
 mysql-connector-python
+sqlalchemy
+mysqlclient
+flask_sqlalchemy
